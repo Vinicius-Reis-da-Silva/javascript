@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 01 - Botão Alerta</title>
+    <!-- Área de formatação CSS3 -->
+    <style>
+        /* FORMATAÇÃO DO CORPO DA PÁGINA */
+        body{
+            font-size: 12pt; /* Tamanho da fonte */
+            font-family: Arial, Helvetica, sans-serif; /* Tipo de fonte */
+            text-align: center; /* Alinhamento do texto */
+        }
+        /* FORMATAÇÃO DOS BOTÕES DA PÁGINA */
+        button{
+            color: white; /* Cor do texto do botão */
+            background-color: rgb(53, 47, 47); /* Cor de fundo do botão */
+            padding: 30px; /* Margem interna do conteinhe do botão */
+            font-size: 12pt; /* Tamanho da fonte do texto do botão */
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio das Mensagens</h1>
+    <button onclick="btn01()">Botão 1º</button> <!-- Tag para criar um botão: O Parametro onclick e exercultado quando o botão e clicado -->
+    <button onclick="btn02()">Botão 2º</button>
+    <button onclick="btn03()">Botão 3º</button>
+    <!-- ÁREA DE CÓDIGO DE JAVASCRIPT -->
+    <script>
+        /* Função para quando o botão 1 for clicado */
+        function btn01(){
+            window.alert('Você clicou no 1º botão'); /* Mensagem de alerta no navergado */
+        }
+        /* Função para quando o botão 2 for clicado */
+        function btn02(){
+            window.alert('Você clicou no 2º botão'); /* Mensagem de alerta no navergado */
+        }
+        /* Função para quando o botão 3 for clicado */
+        function btn03(){
+            window.alert('Você clicou no 3º botão'); /* Mensagem de alerta no navergado */
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 02 - </title>
+    <style>
+        /* Formatação para toda página */
+        body{
+            font-size: 18pt; /* Tamanho de fonte */
+            background-color: rgb(61, 58, 58); /* cor de fundo da página */
+            text-align: center; /* Alinhamento do conteúndo da página */
+            color: blanchedalmond; /* Cor de fonte */
+        }
+        /* Formatação de estilo do botão */
+        button#btn{
+            padding: 20px; /* Margem interna do conteinhe  */
+            background-color: rgb(168, 30, 30); /* Cor de Fundo */
+            font-size: 16pt; /* Tamannho da fonte */
+        }
+    </style>
+</head>
+<body>
+    <h1>Boas-vindas</h1>
+    <!--  -->
+    <button id="btn" onclick="inicio()">Inicie o desafio</button> 
+    <script>
+        /* função para quando o botão for clicado */
+        function inicio(){
+            let nome = window.prompt('Qual é o seu nome?') /* exibir uma caixa de texto para inserir o nome do usuario */
+            //window.alert(`Olá, ${nome}! É um prazer te conhecer!`) 
+            let idade = window.prompt(`Olá, ${nome}! Quantos anos você tem?`) /* informa o nome inserido e perde a idade do usuario */
+            window.alert(`Acabei de conhecer ${nome}, que tem ${idade} anos de idade`) /* exibir na área da mensagem de alerta os informações perdidas */
+        }
+    </script>
+</body>
+</html>

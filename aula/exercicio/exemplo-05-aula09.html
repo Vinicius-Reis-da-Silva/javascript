@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body{
+            background: rgb(68, 125, 199); /* cor de fundo */
+            color: white; /* cor de fonte */
+            font: normal 20pt Arial; /* tipo de fonte e seu tamanho */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Iniciando estudos com DO</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JAvaScript.</p>
+    <div>Clique em mim</div>
+    <script>
+        /*
+        // construção de função 
+        function teste() {
+            var x = {
+                topic: 'JavaScript',
+                fat: true
+            };
+            document.write(x.topic + "<br>");
+            document.write(x["fat"]);
+        }
+        function Point(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        var loc = new Point(5, 4);
+        document.write("Valor de X = " + loc.x + '<br>');
+        document.write("Valor de Y = " + loc.y + '<br>');
+
+        teste();
+        var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+        var lines = input.split('\n');
+            
+        var a = 5;//parseInt(lines.shift());
+        var b = 8;//parseInt(lines.shift());
+        
+        console.log('X = ' + (a+b));
+        */
+        window.document.write('Olá, Mundo!<br>');//comando escreve na página
+        window.document.write(window.navigator.appName);// escreve na tela o nome do navegador do usuário 
+        window.document.write('<br>' + window.document.URL + '<br><br>');//escreve na página a url da página web
+        var corpo = window.document.body;
+        var p1 = document.getElementsByTagName('p')[1];// armazena da variavel a toda a tag chamada e apartir disso se é capas de usa o objeto criado para manipula a tag
+        window.document.write(p1.innerText);//Escreve na página o texto contido na tag chamada para o objeto
+        window.document.write('<br>'+ p1.innerHTML);//Escreve na página o texto pré-formatado contido na tag chamada para o objeto 
+        p1.style.color = 'red'; // far o uso do objeto criado para manipula a cor de fonte
+        corpo.style.background = 'black'; // far o uso das funcões do objeto criado para manipula a cor de fundo da página
+
+
+    </script>
+</body>
+
+</html>

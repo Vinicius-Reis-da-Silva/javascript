@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 2 - Curso de JavaScript</title>
+    <style>
+        body{
+            background-color: rgb(37, 35, 35);
+            font: normal 28pt Arial;
+            text-align: center;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, Mundo!</h1>
+    <p>Me livrei da maldição &#x1F60C</p>
+    <script>
+        /* o camando window.prompt() tem como caracteristica retorno do tipo string portanto as variaveis são do tipo string e não number */
+       var n1 = window.prompt(`Digite o 1º número`); 
+       var n2 = window.prompt('Digite o 2º número'); 
+       var n3 = window.prompt("Digite o último número");
+       /*
+        O sinal de + tem duas funções no JavaScript:
+        (string + string) para concatenação
+        (number + number) para adição
+       */
+       n3 =Number(n3); /* passa tento para float quanto para inteiro */
+       n2 = Number.parseInt(n2);/* Converte a variável de string para inteiro */
+       n1 = Number.parseFloat(n1); /* Converte a variável de string para float( numero de ponto flutuante ) */
+       var soma = n1+n2+n3;
+       var mult = n1*n2*n3;
+
+       window.alert("A soma é " + String(soma) + " e a múltiplicação é " + mult.toString());
+        /*
+        - string(res) : Converte a propria      variavel para string;
+        - mult.toString() : Converte os dados da variável para string para se ultilizado como outro parametro
+        */
+        /*
+        window.alert("A variável 'mult' é do tipo" + typeof mult);
+        */
+    </script>
+</body>
+</html>

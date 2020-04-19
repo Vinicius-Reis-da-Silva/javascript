@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding-top: 80px;/* Tamanha da margem interna do topo do conteinhe */
+            font: normal 20pt Arial; /* tamanho e tipo de fonte */
+            color: white; /* Cor de fonte */
+            background-color: rgb(109, 101, 101);/* cor de fundo da do conteinhe */
+            text-align: center; /* Alinha o texto para o centro do conteinhe */
+        }
+    </style>
+</head>
+<body>
+    <script>
+        /*
+        -------- Exemplo de string --------
+
+        var s = 'JavaScrpit'
+        'Eu estou aprendendo' + s -> usa contanação
+        `Eu estou aprendendo ${s}` -> usa template string
+        */
+        var nome = window.prompt("Qual é seu nome?");
+        /*
+        nome.length : informa o número de caracteres
+        */
+        window.alert(`O seu nome tem ${nome.length} caracteres`);//informa o tamanho da string
+        document.write(`Olá, <strong>${nome}</strong>! Seu nome tem ${nome.length} letras<br>`); // comando que escreve a informação na página html
+        // a tag <strong> : deixa a string em negrito
+        document.write(`Seu nome em maiúsculas é ${nome.toUpperCase()}<br>`);// toUpperCase() : serve para parsa a string toda para letras maiúscula
+        document.write(`Seu nome em minúsculas é ${nome.toLowerCase()}<br>`);// toLowerCase() : serve para parsa a string toda para letras minúsculas
+        var valor = window.prompt("Digite um valor");
+        valor = Number(valor);
+        document.write(`Seu valor com 2 casas dec. ${valor.toFixed(2)}<br>`);//Trabalha apenas com duas casas decimais
+        document.write(`Seu valor trocando ponto por virgula ${valor.toFixed(2).replace('.',',')}<br>`);//Fixa em duas casas decimais e troca o ponto por virgula
+        document.write(`Seu Valor em Reais ${valor.toLocaleString('pt-BR',{style: 'currency', currency: 'BRL'})}`);//Trabalha o valor como valor monetario "dinheiro"       
+    </script>
+</body>
+</html>
