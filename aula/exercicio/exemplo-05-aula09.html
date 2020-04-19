@@ -10,6 +10,7 @@
             background: rgb(68, 125, 199); /* cor de fundo */
             color: white; /* cor de fonte */
             font: normal 20pt Arial; /* tipo de fonte e seu tamanho */
+            text-align: center; /* alinha o texto do conteúndo ao centro */
         }
     </style>
 </head>
@@ -17,8 +18,16 @@
 <body>
     <h1>Iniciando estudos com DO</h1>
     <p>Aqui vai o resultado</p>
-    <p>Aprendendo a usar o <strong>DOM</strong> em JAvaScript.</p>
-    <div>Clique em mim</div>
+    <p id="text">Aprendendo a usar o <strong>DOM</strong> em JAvaScript.</p>
+    <br><br>
+    <div class="clique1">Clique em mim 1º</div>
+    <br>
+    <div name="clique2">Clique em mim 2º</div>
+    <br>
+    <div id="no-clique1">Não clique aqui 1º</div>
+    <br>
+    <div id="no-clique2">Não clique aqui 2º</div>
+
     <script>
         /*
         // construção de função 
@@ -46,6 +55,7 @@
         var a = 5;//parseInt(lines.shift());
         var b = 8;//parseInt(lines.shift());
         
+
         console.log('X = ' + (a+b));
         */
         window.document.write('Olá, Mundo!<br>');//comando escreve na página
@@ -59,6 +69,52 @@
         corpo.style.background = 'black'; // far o uso das funcões do objeto criado para manipula a cor de fundo da página
 
 
+        /* Seleciona elemento com o DOM por ID */
+        var modId = window.document.getElementById('text'); // comando para pegar o elemento do id e armazena seu dados no objeto para manipulação 
+        modId.style.width = "400px"; // usando o objeto para usa 'width' do CSS3 da página : define a largura do id da tag
+        modId.style.length = "200px"; // usando o objeto para usa 'width' do CSS3 da página : define a altura do id da tag
+        modId.style.background = "yellow"; // usando o objeto para usa 'width' do CSS3 da página : define a cor de fundo do id da tag
+        modId.style.marginLeft = "135px";// usando o objeto para usa 'width' do CSS3 da página : define a margem externa do id da tag
+
+
+        /* Seleciona elemento com o DOM por CLASS */
+        var modClass = window.document.getElementsByClassName('clique1')[0];// comando para pegar a class e o index da utilização informando da tag e armazena seu dados no objeto para manipulação 
+        modClass.style.background = 'green'; // objeto usando os paramentros de CSS3 : cor de fundo da tag
+        modClass.style.width = "220px"; // objeto usando os paramentros de CSS3 : largura da tag
+        modClass.style.marginLeft = "200px"; // objeto usando os paramentros de CSS3 : margem externa da tag
+        modClass.style.padding = '20px';// objeto usando os paramentros de CSS3 : margem interna da tag
+        modClass.style.borderRadius = "20px";// objeto usando os paramentros de CSS3 : circufarencia das pontas da borda da tag
+
+
+        /* Seleciona elemento com o DOM por NAME */
+        var modName = window.document.getElementsByName('clique2');//pegar todas as tags que apresentão os mesmo 'name' em armazena em um vetor de objetos
+        modName[0].style.background = "blue";//Usando o vetor de 'name' e seu index para se usa as formatações CSS3 : cor de fundo
+        modName[0].style.marginLeft = "200px";//Usando o vetor de 'name' e seu index para se usa as formatações CSS3 : aumenta a margem externa da esquerda
+        modName[0].style.width = "220px";//Usando o vetor de 'name' e seu index para se usa as formatações CSS3 : ajusta a largura da tag
+        modName[0].style.heigth = "20px";//Usando o vetor de 'name' e seu index para se usa as formatações CSS3 : Ajusta a altura da tag
+        modName[0].style.padding = "20px";//Usando o vetor de 'name' e seu index para se usa as formatações CSS3 : margem interna da tag
+        modName[0].style.borderRadius = "20px";//Usando o vetor de 'name' e seu index para se usa as formatações CSS3 : Ajusta a circuferencia das bordas da tag
+
+
+        /* Seleciona elemento com o DOM por tipo de tag e seu index na ultilização */
+        var modTag = window.document.getElementsByTagName('div')[2];// o objeta recebe o paramentro da tag indicada pelo tipo da tag e respetivamente o seu index na ultilização
+        modTag.style.background = 'red';//Usando o vetor da tag chamada e seu index de utilização para pode usa as formatações CSS3 : Ajusta a cor de fundo tag
+        modTag.style.width = "220px";//Usando o vetor da tag chamada e seu index de utilização para pode usa as formatações CSS3 : Ajusta a largura do conteinhe da tag
+        modTag.style.heigth = "20px";//Usando o vetor da tag chamada e seu index de utilização para pode usa as formatações CSS3 : Ajusta a altura do conteinhe da tag
+        modTag.style.padding = "20px";//Usando o vetor da tag chamada e seu index de utilização para pode usa as formatações CSS3 : Ajusta o tamanho da margem interna do conteinhe da tag
+        modTag.style.borderRadius = "20px";//Usando o vetor da tag chamada e seu index de utilização para pode usa as formatações CSS3 : Ajusta a circuferencia da bordas do conteinhe da tag
+        modTag.style.marginLeft = "200px";//Usando o vetor da tag chamada e seu index de utilização para pode usa as formatações CSS3 : Ajusta o tamanho da margem externa à esquerda do conteinhe da tag
+
+        /* Seleciona elemento com o DOM por da mesma forma do CSS3 para indetifica as de html5 tag e seu index na ultilização */
+        var modSel = window.document.querySelector("div#no-clique2");//comdando para seleciona um tag apartir de seu indetificado , classe ou tag no geral sem 'id' ou 'class'
+        modSel.style.background = "#b7410e";//Objeto que recebe tag chamada para pode utiliza nas formatações CSS3 : Ajusta a cor de fundo do conteinhe da tag 
+        modSel.style.width = "220px";//Objeto que recebe tag chamada para pode utiliza nas formatações CSS3 : Ajusta o tamanho da largura do conteinhe da tag 
+        modSel.style.heigth = "20px";//Objeto que recebe tag chamada para pode utiliza nas formatações CSS3 : Ajusta o tamanho da altura do conteinhe da tag 
+        modSel.style.padding = "20px";//Objeto que recebe tag chamada para pode utiliza nas formatações CSS3 : Ajusta o tamanho da margem interna do conteinhe da tag 
+        modSel.style.borderRadius = "20px";//Objeto que recebe tag chamada para pode utiliza nas formatações CSS3 : Ajusta o tamanho da circuferencia da borda do conteinhe da tag 
+        modSel.style.marginLeft = "200px"; //Objeto que recebe tag chamada para pode utiliza nas formatações CSS3 : Ajusta o tamanho da margem externa à esquerda do conteinhe da tag
+        modSel.style.marginBottom = "80px";//Objeto que recebe tag chamada para pode utiliza nas formatações CSS3 : Ajusta o tamanho da margem inferior do conteinhe da tag
+        
     </script>
 </body>
 
