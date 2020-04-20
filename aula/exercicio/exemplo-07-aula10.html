@@ -4,25 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Somador</title>
-</head>
-<body>
-    <h1>Somando Valores</h1>
-    <input type="number" name="txtn1" id="txtn1">
-    +
-    <input type="number" name="txtn2" id="txtn2">
-    <input type="button" value="somar" onclick="somar()">
-    <div id="res">Resultado</div>
-    <script>
-        function somar(){
-            var tn1 = window.document.getElementById('txtn1');
-            var tn2 = window.document.querySelector("input#txtn2");
-            var res = window.document.getElementById('res');
-            var n1 = Number(tn1.value);
-            var n2 = Number(tn2.value);
-            var resul = n1 + n2;
-            res.innerText = `A soma entre ${n1} e ${n2} é igual a ${resul}`;
+    <style>
+        /* Formatação do divisão principal da página */
+        body{
+            background-color: crimson;/* cor de fundo da área da tag */
+            margin-left: 200px;/* Ajusta o tamanho da margem externa da esquerda */
+            font: normal 20pt Arial;/* define se o texto tem serifa , seu tamanho de fonte e o tipo da fonte */
+        }
+
+        /* Formatação a área do divisão dos itens */
+        div#estilo{
+            background: rgb(15, 15, 85);/* cor de fundo da área da tag */
+            width: 700px;/* Ajusta o Tamanho da Largura da área da tag */
+            height: 500px; /* Ajusta o Tamanho da Altura da área da tag */
+            border-radius: 10vh; /* Porcetagem de circuferencia da borda da área da tag */
+            padding: 80px; /* Ajusta o tamanho da margem interna dos 4 lados da área da tag */
+            color: white;/* Cor da fonte da tag */
+            text-align: center;/* Alinha os textos ao centro da área da tag */
             
         }
+
+        /* Formatação para caixa de texto para receber os valores */
+        input{
+            font: normal 16pt Arial;/* define se o texto tem serifa , seu tamanho de fonte e o tipo da fonte */
+            border-radius:20px; /* O Tamanho da circuferencia da borda da área da tag */
+            text-align: center;/* Alinha os textos ao centro da área da tag */
+            padding: 16px 0px; /* Ajusta o tamanho da margem interna da altura e largura da área da tag */
+        }
+
+        /* Formatação do estilo do botão */
+        input#btn{
+            font: normal 16pt Arial;/* define se o texto tem serifa , seu tamanho de fonte e o tipo da fonte */
+            font-weight: bold;/* deixa o texto em negrito */
+            background: green center;/* cor de fundo do botão */
+            padding: 10px 50px;/* Ajusta o tamanho da margem interna da altura e largura da área da tag */
+            color: whitesmoke;/* cor da fonte do texto do botão */
+            margin-top: 15px;/* Ajusta o tamanho da margem externa do topo da área da tag */
+            margin-bottom: 30px;/* Ajusta o tamanho da margem externa inferior da área da tag */
+        }
+    </style>
+</head>
+<body>
+    <div id="estilo">
+        <h1>Somando Valores</h1>
+        <!--
+            -------- TAG <input> --------
+            O elemento HTML <input> é usado para criar controles interativos para formulários baseados na web para receber dados do usuário. A semântica de um <input> varia consideravelmente dependendo do valor de seu atributo type
+        -->
+        <input type="number" name="txtn1" id="txtn1"><!-- cria uma caixa de texto para pegar os dados e seu formato de texto: tipo de dados , e nome do indentificador para armazena os dados -->
+        +
+        <input type="number" name="txtn2" id="txtn2"><!-- cria uma caixa de texto para pegar os dados e seu formato de texto: tipo de dados , e nome do indentificador para armazena os dados -->
+        <br>
+        <input type="button" value="SOMAR" onclick="trabDados()" id="btn"><!-- criar um botão com o valor de indentificação 'somar' e um evento de clique -->
+        <div id="res">Resultado</div><!-- Aqui exibir o resultado da soma-->
+    </div>
+    <script>
+
+        /*FUNÇÃO PARA TRABALHAR OS DADOS INSERIDOS NAS CAIXAS DE TEXTOS*/
+        function trabDados(){
+            
+            var tn1 = window.document.getElementById('txtn1');// Objeto recebe os dados da tag de id 'txtn1'
+            var tn2 = window.document.querySelector("input#txtn2");// Objeto recebe os dados da tag <input> de id 'txtn2'
+            var n1 = Number(tn1.value); // Usando os objetos para Pegar e Passa os valores inseridos na 1º caixa de texto para numero
+            var n2 = Number(tn2.value);// Usando os objetos para Pegar e Passa os valores inseridos na 2º caixa de texto para numero
+            somar(n1 , n2);//chamada da função que realiza a soma
+        }
+
+
+        /* FUNÇÃO PARA SOMA OS VALORES */
+        function somar( n1 , n2){
+            
+            var res = window.document.getElementById('res');// O objeto recebe os parametro para pode manipular a tag de id 'res'
+            var resul = n1 + n2;// A variavel recebe os valores já trabalhado passodos pelos parametros
+            res.innerText = `A soma entre ${n1} e ${n2} é igual a ${resul}`;//Objeto criado manipula o texto para recebe o dados atribuidos            
+        }
+
+
     </script>
 </body>
 </html>
