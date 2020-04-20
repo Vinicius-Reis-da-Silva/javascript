@@ -23,3 +23,29 @@
     <div id="area">
         interaja...
     </div>
+    <script>
+
+        var mouse = window.document.getElementById('area');//objeto recebe as caracteristica para manipular a tag do id 'area'
+        mouse.addEventListener('click', clicou);//adiciona o evento 'click( clique sobre a área da tag )' a uma lista de eventos da área da tag
+        mouse.addEventListener('mouseenter' , entrar); //adiciona o evento 'mouseenter( quando o cursor entra na área da tag )' a uma lista de eventos da área da tag
+        mouse.addEventListener('mouseout' , sair);//adiciona o evento 'mouseout( quando o cursor sair da área da tag )' a uma lista de eventos da área da tag
+
+        /* FUNÇÃO QUANDO SE CLICA O MOUSE */
+        function clicou(){
+            mouse.innerText = "Clicou! sair de cima";//substitui o texto da tag pela STRING da atribuição
+            mouse.style.background = "red";//mudar a cor de fundo para vermelho
+        }
+
+        /* FUNÇÃO PARA QUANDO O MOUSE ENTRA NA ÁREA DA TAG */
+        function entrar(){
+            mouse.innerText = "Entrou!";//substitui o texto da tag pela STRING da atribuição  
+        }
+
+        function sair(){
+            mouse.innerText = "Saiu!";//substitui o texto da tag pela STRING da atribuição
+            mouse.style.background = "rgb(42, 139, 42)";//mudar a cor de fundo para verde claro
+        }
+        
+    </script>
+</body>
+</html>
