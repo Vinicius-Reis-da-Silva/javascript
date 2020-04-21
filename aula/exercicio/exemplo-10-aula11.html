@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+    <style>
+        /* FORMATAÇÃO CORPO DA PÁGINA */
+        body{
+            background: rgb(67, 67, 150);/* Cor de funda da área da tag */
+            font: normal 20pt Arial;/* formatação de da fonte: serifa , tamanho da fonte , tipo de fonte */
+            padding: 80px; /* tamanho da margem interna dos 4 lados da área da tag */
+            
+        }
+
+        /* FORMATAÇÃO DA ÁREA DA INTERFACE DA PÁGINA */
+        div#interface{
+            background:#eb3d3d;/* Cor de funda da área da tag */
+            border-radius: 10px;/* Tamanho da cirfurencia da bordas da área da tag */
+            box-shadow: 1px 1px 20px;/* configura os paramentro da sombra da borda */
+            padding: 30px;/* tamanho da margem interna dos 4 lados da área da tag */
+            width: 800px;/* Tamanho da largura da área da tag */
+            text-align: center;/* Alinhamento dos itens de dentro da tag para o centro */
+            margin-left:auto; /* Tamanho da margem externa da esquerda da área da tag */
+            margin-right: auto;/* Tamanho da margem externa da direita da área da tag */
+        }
+
+        /* FORMATAÇÃO DA REGIAO DE RESPOSTA DA PÁGINA */
+        div.res{
+            margin: 40px auto;/* Tamanho da margem externa da área da tag */
+            border-radius: 5px;/* Tamanho da cirfurencia da bordas da área da tag */
+            padding-top: 10px;/* tamanho da margem interna do topo da área da tag */
+            padding-bottom: 10px;/* tamanho da margem interna inferior da área da tag */
+            color: white;/* cor da fonte do texto da contido na tag */
+        }
+
+        /* FORMATAÇÃO DE TODAS A TAG DE <input> GERAL DA PÁGINA */
+        input{
+            font: normal 18pt Arial;/* formatação de da fonte: serifa , tamanho da fonte , tipo de fonte */
+            border-radius: 10px;/* Tamanho da cirfurencia da bordas da área da tag */
+            text-align: center;/* Alinhamento dos itens de dentro da tag para o centro */
+        }
+
+        /* FORMATAÇÃO DA LARGURA DA DA CAIXA DE TEXTO */
+        input#txtvel{
+            width: 180px;/* Tamanho da largura da área da tag */
+        }
+
+        /* FORMATAÇÃO PARA O BOTÃO DA TAG */
+        input#btn{
+            padding: 6px 24px 6px 24px;/* tamanho da margem interna dos 4 lados da área da tag */
+            background-color: grey;/* Cor de funda da área da tag */
+            font-weight: bolder;/* deixa o texto da área da tag com caracteristica de negrito */
+        }
+    </style>
+</head>
+<body>
+    <div id="interface">
+        <h1>Sistema de Multas</h1>
+        Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> km/h
+        <input id="btn" type="button" value="verificar" onclick="calcular()">
+        <br>
+        <div class="res">
+            
+        </div>
+        <script>
+
+            function calcular(){
+                var txtVel = window.document.querySelector('input#txtvel');
+                var res = window.document.querySelector('div.res');
+                var vel = Number(txtVel.value);
+
+                res.style.background =  "rgb(27, 209, 27)";
+                res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel} km/h</strong></p>`;
+
+                if(vel>60){
+                    res.innerHTML += "<p>Você está <strong>MULTADO</strong> por excesso de velocidade</p>";
+                }
+
+                res.innerHTML += "<p>Dirija sempre com cinto de segurança!</p>";
+            }
+        </script>
+    </div>
+</body>
+</html>
