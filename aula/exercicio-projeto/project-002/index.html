@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Idade</title>
+    <link rel="stylesheet" href="_css/_estilo.css" type="text/css">
+    
+</head>
+<body onload="carregar()">
+    <div id="interface">
+        <header>
+            <h1>Verificador de Idade</h1>
+        </header>
+        <section>
+            <!--
+                ******* ÁREA PARA ENTRADA DE DADOS DO ÚSUARIO *********
+            -->
+            <div id="msg">
+                <!--
+                    paragrafo para entrada do anos de nascimento
+                -->
+                <p>
+                    Ano de Nascimento: 
+                    <input type="number" name="txtano" id="txtano" min="0">
+                    <!-- A tag <input> cria uma entrada de dados como forma de caixa de texto do tipo númerico para informar a idade do úsuario -->
+                </p>
+                <!--
+                    paragrafo para escolhe na caixa de seleção redonda o sexo do úsuario
+                -->
+                <p>
+                    Sexo:
+                    <input type="radio" name="radsex" id="masc" checked><!-- A tag <input> cria uma entrada de dados como forma de caixa de seleção redonda para informar o sexo do úsuario -->
+                    <!-- O parametro 'checked' deixa a caixa de texto já selecionada -->
+                    <label for="masc">Masculino</label><!-- cria um rotulo para caixa de seleção -->
+                    <input type="radio" name="radsex" id="fem">
+                    <label for="fem">Feminino</label>
+                </p>
+                <!--
+                    Paragrafo para criação de input botão com o texto escrito 'Verificar' e funciona quando clicado para chama a função 'verificar()'
+                -->
+                <p>
+                    <input type="button" value="Verificar" onclick="verificar()">
+                </p>
+            </div>
+            <div id="res">
+                
+            </div>
+        </section>
+        <!--
+            O elemento <footer> marca a área inferior, normalmente conhecida como rodapé, do conteúdo geral do documento ou do conteúdo de uma seção específica a qual ele está subordinado. Pode conter um cabeçalho próprio com bloco de navegação que apontam para informações como nome do autor, links para aprofundamento (saiba mais), links relacionados, ou ainda uma lista de comentários em um blog.
+        -->
+        <footer>
+            <p>&copy; CursoemVideo</p>
+        </footer>
+    </div>
+    <script src="_js/interacao.js"></script><!-- comando pra usar arquivo javascript externo -->
+</body>
+</html>
