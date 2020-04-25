@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+/* FORMATAÇÃO DA ÁREA DE TAG <body> DA PÁGINA */
+body{
+    background: rgb(76, 76, 228); /* Ajusta a cor de fundo da área da tag */
+    font: normal 18pt Arial; /* configura o texto contiduo na tag: serifa , tamanho da fonte , tipo de fonte */
+}
+
+/* FORMATAÇÃO PARA DIVISÃO DE INTERFACE DA PÁGINA */
+select{
+    font: normal 16pt Arial;
+    font-weight: bolder;
+}
+/* FORMATAÇÃO PARA O CABEÇALHO DA PÁGINA */
+header{
+    text-align: center;/* Alinhamento do conteúdo dos itens contiduos na região da tag */
+    color: white;/* Ajusta a Cor da fonte */
+}
+
+/* FORMATAÇÃO PARA UMA SEÇÃO DA PÁGINA */
+section{
+    background: white;/* Ajusta a cor de fundo da área da tag */
+    border-radius: 10px;/* Tamanho da circuferencia da borda da região da tag */
+    width: 600px;/* Tamanho da largura da área da tag */
+    /*padding-top: 20px;/* Ajusta o tamanho da margem interna do topa da região da tag */
+    padding: 20px 20px 20px 50px;
+    /*padding-bottom: 20px;/* Ajusta o tamanho da margem interna inferior da região da tag */
+    margin: auto;/* Ajuste automatico do tamanho da margem externa da área da tag*/
+    box-shadow: 1px 1px 3px rgb(37, 60, 102);/* Adiciona sombra à área da tag */
+}
+
+input{
+    text-align: center;
+    font: normal 16pt Arial;
+    border-radius: 5px;
+}
+
+/* FORMATAÇÃO DA REGIÃO DO RÓDAPE DA PÁGINA */
+footer{
+    text-align: center;/* Alinhamento do conteúdo dos itens contiduos na região da tag */
+    color: white;/* Ajusta a Cor da fonte */
+    font-style: italic;/* Ajusta o estilo da fonte para italico */
+}

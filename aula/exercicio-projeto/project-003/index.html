@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Contador</title>
+    <link rel="stylesheet" href="_css/_estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Vamos contar</h1>
+    </header>
+    <!-- SEÇÃO PRINCIPAL DA PÁGINA HTML -->
+    <section>
+        <div>
+            <p>
+                Inicio : &nbsp; <input type="number" name="txtInicio" id="txtInicio"><!-- entrada de dados para o inicio -->
+            </p>
+            <p>
+                Fim : &nbsp; &nbsp;&nbsp;<input type="number" name="txtFim" id="txtFim"><!-- entrada de dados para o fim -->
+            </p>
+            <p>
+                Passo : <input type="number" name="txtPasso" id="txtPasso"><!-- entrada de dados para o passo -->
+            </p>
+            <p>
+                <input type="button" value="CONTAR" onclick="contar()"><!-- Botão para chama a função de contar -->
+            </p>
+        </div>
+        <!-- ÁREA PARA MOSTRA O RESULTADO DA CONTAGEM -->
+        <div id="resp">
+
+        </div>
+    </section>
+    <!-- ÁREA DE RÓDAPE DA PÁGINA  -->
+    <footer>
+        <p>&copy; CursoemVideo</p>
+    </footer>
+    <script src="_javascrip/contador.js"></script><!-- CAMINHO PARA ADICIONAR O DOCUMENTO JAVASCRIPT -->
+</body>
+</html>
