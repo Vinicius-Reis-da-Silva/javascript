@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+/* FORMATAÇÃO DO ESTILO DA TAG DE CORPO PRINCIPAL DA PÁGINA */
+body{
+    background-color: rgb(180, 170, 170);  /* Cor de fundo */
+    font-family: Arial, Helvetica, sans-serif;  /* Tipo de fonte do texto */
+    font-size: 16pt;  /* Tamanho da fonte do texto */
+}
+
+/* FORMATAÇÃO DO ESTILA DA TAG DE MAIOR PESO DE TITULO  */
+h1{
+    text-align: center;
+    color: white;
+}
+
+/* FORMATAÇÃO PARA O ESTILO DO BOTÃO */
+button{
+    margin: auto 15px;  /* Tamanho da margem externa horizontal e vertical da área da tag  */
+    padding: 20px 30px;  /* Tamanho da margem interna horizontal e vertical da área da tag  */
+    text-align: center;  /* Alinhamento do texto da tag para o centro */
+    font-weight: bold;  /* deixa o texto em negrito */
+    font-size: 14pt;  /* Tamanho da fonte do botão */
+    border-radius: 10vh;  /* Porcentagem de circuferencia da área da tag */
+}
+
+/* FORMATAÇÃO P/ QUANDO O CURSOR PASSA POR CIMA DA ÁREA DA TAG */
+button:hover {
+    border: 5px solid rgb(243, 44, 44);  /* Adiciona uma borda solida de 5px de cor avermelhada */
+    -webkit-transform: scale(1.2);  /* TRansfromação de aumenta a escala da área da tag */
+}
+
+/* FORMATAÇÃO DA TAG DE DIVISÃO GENERICA PRINCIPAL */
+div#interface {
+    margin: auto;  /* Tamanho da margem externa fica sempre centralizada da área da tag  */
+    margin-top: 30px;  /* Ajusta o tamanho da margem externa do topo */
+    padding: 40px;  /* Tamanho da margem interna da área da tag ficao iguais */
+    background: rgb(128, 128, 228);  /* Cor de funda da região da tag */
+    width: 600px;  /* Tamanho horizontal( largura ) da área da tag */
+    height: 400px;  /* Tamanho da vertical( altura ) da área da tag */
+    text-align: center;  /* Alinhamento do texto da tag para o centro */
+}

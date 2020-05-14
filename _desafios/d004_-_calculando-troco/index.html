@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../_css/padrao.css">
+    <title>Cálcula Troco</title>
+</head>
+<body>
+    <div id="interface">
+        <h1>Calculando o Troco</h1>
+        <button onclick="comprar()">Comprar produto</button>
+    </div>
+    <script>
+        function comprar(){
+            let prod = window.prompt('Qual produto você está comprado?');
+            let cust = window.prompt(`Quanto custa ${prod} que você está comprando?`);
+            let pag = window.prompt(`Qual foi o valor que você deu para pagar ${prod}`);
+
+            cust = parseFloat(cust);
+            pag = parseFloat(pag);
+            const troco = pag - cust;
+            if(cust > pag){
+                window.alert(`Você não tem dinheiro suficiente para comprar ${prod}`);
+            }else{
+                window.alert(`Você comprou ${prod} que custou ${reais(cust)}`+
+                `\nDeu ${reais(pag)} em dinheiro e vai receber ${reais(troco)} de troco.`+ `\nVolte Sempre!`);
+            }
+        }
+
+        function reais(val){
+            return val.toLocaleString('pt-BR' , {style: 'currency' , currency: 'BRL'});
+        }
+
+    </script>
+</body>
+</html>

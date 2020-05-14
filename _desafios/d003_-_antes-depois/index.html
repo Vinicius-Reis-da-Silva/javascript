@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../_css/padrao.css">
+    <title>Antes e Depois</title>
+</head>
+<body>
+    <div id="interface">
+        <h1>Antes e depois</h1>
+        <button onclick="antesDepois()">Antecessor e Sucessor</button>
+    </div>
+    <script>
+        function antesDepois(){
+            let valor = window.prompt("Digite um número inteiro qualquer");
+            valor = parseInt(valor);
+            window.alert(`Antes de ${valor}, temos o número ${valor-1} \nDepois de ${valor}, temos o número ${valor+1}`);
+        }
+    </script>
+</body>
+</html>
