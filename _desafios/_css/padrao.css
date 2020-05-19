@@ -36,6 +36,26 @@ div#interface {
     padding: 40px;  /* Tamanho da margem interna da área da tag ficao iguais */
     background: rgb(128, 128, 228);  /* Cor de funda da região da tag */
     width: 600px;  /* Tamanho horizontal( largura ) da área da tag */
-    height: 400px;  /* Tamanho da vertical( altura ) da área da tag */
+    height: 600px;  /* Tamanho da vertical( altura ) da área da tag */
     text-align: center;  /* Alinhamento do texto da tag para o centro */
+    border-radius: 10px;
+}
+
+/* FORMATAÇÃO P/ TAG <article> DE ID 'resposta' */
+article#resposta {
+    margin: 20px 10px;  /* Tamanho da margem externa na diagonal e vertical */
+    padding: 10px;  /* Tamanho da margem interna p/ todos o lados */
+    border-radius: 10px;  /* Tamanho de circuferencia das bordas da região da tag */
+    background-color: #000000;  /* Ajuste da cor de fundo região da tag */
+    color: aqua;  /* Ajuste da cor da fonte do texto */
+    font-size: 16pt;  /* Tamanho da fonte do texto */
+}
+
+span.negrito {
+    font-weight: bold;
+    font-style: italic;
+}
+
+span {
+    font-weight: bold;
 }

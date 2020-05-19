@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../_css/padrao.css">
+</head>
+<body>
+    <div id="interface">
+        <h1>Conversor de Medidas</h1>
+        <button onclick="calc_med()">Converter</button>
+        <article id="resposta">
+            <p>Clique no botão acima para iniciar</p>
+        </article>
+    </div>
+    <script>
+        function calc_med(){
+            const metros = window.prompt("Digite uma distância em metros (m)");  // Valor do input do usuario
+            const valor = Number(metros);  // Converte o dado para número (number)
+            let resp = window.document.getElementById("resposta");  // cria um objeto para manipula a tag de id 'resposta'
+            const unid = ["quilômetros" , "hectômetros" , "decâmetros" , "decímetros" , "centímetros" , "milímetros"];  // Array de string com o nome das unidades
+            const unid_sib = ["Km" , "Hm" , "Dam" , "dm" , "cm" , "mm"];  // Array de string com as representações das unidades de medidas
+            const equi_metro = [1000 , 100 , 10 , 0.1 , 0.01 , 0.001];  // Array de number com os equivalente de metro para as demais unidades
+
+            resp.innerHTML = `<h2>A distância de ${metros} metros, corresponde a...</h2>`;
+             
+            // laço de repetção para cálcular as unidade e deixa-las no formato de notação do Brasil
+            for(let i=0 ; i<equi_metro.length ; i++){
+                equi_metro[i] = (valor/equi_metro[i]).toLocaleString('pt-BR');
+            }
+
+            for(let i=0 ; i<equi_metro.length ; i++){
+                resp.innerHTML += `<p>${equi_metro[i]} ${unid[i]} (${unid_sib[i]})</p>`
+            }
+        }
+    </script>
+</body>
+</html>

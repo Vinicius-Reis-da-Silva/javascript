@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../_css/padrao.css" type="text/css">
+
+    <!-- CÓDIGO JAVASCRIPT -->
+    <script type="text/javascript">
+        /* FUNÇÃO QUE REALIZA A CONVERÇÃO DE UNIDADES DE TEMPERATURAS */
+        function converte(){
+            const celsi = window.prompt("Digite uma temperatura em °C (Celsius)");  // variavel que armazena o input doi usuario ( temperatura em celsius )
+            const resp = window.document.querySelector('article#resposta');  // Criação de um Objeto p/ pode manipula a tag 'article com id "resposta" ' 
+            let kelvin = (Number(celsi) + 273);  // Faz o Calculo de conversão de CELSIUS p/ KELVIN e armazena na variavel 'kelvin'
+            let fahre = (1.8 * Number(celsi) + 32); // Faz o Calculo de conversão de CELSIUS p/ FAHRENHEIT e armazena na variavel 'fahre'    
+
+            resp.innerHTML = `<h2>A temperatura de ${Number(celsi).toFixed(1).replace('.' , ',')}°C, corresponde a...</h2>`;  // Sobreescreve o HTML do objeto com a String
+            resp.innerHTML += `<p>${kelvin.toFixed(2).replace('.' , ',')}K (Kelvin)</p> 
+            <p>${fahre.toFixed(2).replace('.' , ',')}°F (Fahrenheit)</p>`;  // Concatena o HTML do objeto com a string
+        }
+    </script>
+
+</head>
+<body>
+    <div id="interface">
+        <h1>Conversor de Temperatura</h1>
+        <button onclick="converte()">Convertor</button>
+        <article id="resposta">
+            <p>Clique no botão acima para iniciar</p>
+        </article>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../_css/padrao.css" type="text/css">
+    <title>Conversor R$ -> US$</title>
+    <script>
+
+        let contacao;
+        
+        function dolar(){
+            contacao = window.prompt('Antes de mais nada. Quanto está a contação do dólar agora?');
+        }
+
+        function conversao(){
+            let resul = window.document.querySelector('article#resposta');
+            let dinhe = window.prompt('Quantos R$ você tem na cartera?');
+            let myDolar = Number(dinhe)/Number(contacao);
+
+            resul.innerHTML = `Você tem US$ ${myDolar.toFixed(2)} na sua cateira`;
+        }
+    </script>
+</head>
+<body onload="dolar()">
+    <div id="interface">
+        <h1>Conversor R$ &#x27A1; US$</h1>
+        <button onclick="conversao()">Converter</button>
+        <article id="resposta">
+            <p>Clique no botão para iniciar</p>
+        </article>
+    </div>
+</body>
+</html>

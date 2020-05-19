@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórmula de Bhaskara</title>
+    <link rel="stylesheet" href="../_css/padrao.css">
+    <script>
+        function bhaskara(){
+            const x1 = Number(window.prompt('Qual é o valor de a?'));
+            const x2 = Number(window.prompt('Qual é o valor de b?'));
+            const x3 = Number(window.prompt('Qual é o valor de c?'));
+            let delta = (x2**2) - 4*x1*x3;
+            let resul_html = window.document.querySelector('article#resposta');
+
+            resul_html.innerHTML = `<h2>Resolvendo Bhaskara</h2>`;
+            resul_html.innerHTML += `<p>A equação atual é <span>${x1}x<sup>2</sup> + ${x2}x + ${x3} = 0</span></p>`;
+            resul_html.innerHTML += `<p>O cálculo realizado será <span>&Delta; = ${x2}<sup>2</sup> - 4 . ${x1} . ${x3}</span></p>`;
+            resul_html.innerHTML += `<p>O valor calculado foi <span style="background-color: yellow; color: black">&Delta; = ${delta}</p>`;
+        }
+    </script>
+    
+</head>
+<body>
+    <div id="interface">
+        <h1>Resolvendo Bhaskara</h1>
+        <button onclick="bhaskara()">Calcular</button>
+        <article id="resposta">
+            <p>
+                Considerando uma equação no formato <span class="negrito">a</span>x<sup>2</sup> + <span class="negrito">b</span>x + <span class="negrito">c</span> = 0, aperte o botão acima para calcular o valor de &Delta;. 
+            </p>
+        </article>
+    </div>
+</body>
+</html>

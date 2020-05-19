@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajustar Sálario</title>
+    <link rel="stylesheet" type="text/css" href="../_css/padrao.css">
+    <script>
+        function reaj_sal(){
+
+            const nome = window.prompt("Qual é o nome do funcionario?");
+            let salario = Number(window.prompt(`Qual é o salário de ${nome}?`));
+            let porc_up = Number(window.prompt(`O salário de ${nome} vai ser reajustado em qual porcentagem?`));
+            let sal_up = (porc_up/100) * Number(salario);
+            let resul = window.document.querySelector('article#resposta');
+
+            resul.innerHTML = `<h2>${nome} recebeu um aumento salarial!</h2>`;
+            resul.innerHTML += `<p>O salário atual era ${real(salario)}</p>`;
+            resul.innerHTML += `<p>Com um aumento de ${porc_up}%, o salário vai aumentar ${real(sal_up)} no próximo mês</p>`;
+            resul.innerHTML += `E a partir dai, ${nome} vai passar ganhar ${real(salario+sal_up)}`;
+           
+        }
+
+        function real(valor){
+            return valor.toLocaleString('pt-BR' , {style: 'currency' , currency: 'BRL'});
+        }
+
+    </script>
+</head>
+<body>
+    <div id="interface">
+        <h1>Reajuste salarial</h1>
+        <button onclick="reaj_sal()">Reajustar Salário</button>
+        <article id="resposta">
+            <p>Clique no botão acima para iniciar</p>
+        </article>
+    </div>
+</body>
+</html>

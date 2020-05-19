@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de Desconto</title>
+    <link rel="stylesheet" href="../_css/padrao.css" type="text/css">
+    <script>
+        /* FUNÇÃO PARA FAZER O CÁLCULO DO DESCONTO */
+        function calc_des(){
+            const desco = 0.1;  // Porcentagem do desconto em decimais
+            let resul = window.document.querySelector('article#resposta');  // Objeto p/ menipulação da tag 'article' de id 'resposta' da página HTML
+            let prod = window.prompt('Qual é o produto que você está comprando?');  // Nome do produto
+            let valor = window.prompt(`Qual é o preço de ${prod}?`);  // Preõ do produto
+            valor = Number(valor);  // Conversão de tipo: de String para number
+            let val_des = valor*desco;  // Cálculo do valor do desconto
+            let tot_pag = valor - val_des;  // Cálculo do total a pagar
+            
+            //Bloco p/ alteração de escrita na página HTML
+            resul.innerHTML = `<h2>Calculando desconto de ${desco*100}% para ${prod}.</h2>`;
+            resul.innerHTML += `<p>Preço original era ${reais(valor)}</p>`;
+            resul.innerHTML += `<p>Você acabou de ganhar ${reais(val_des)} de desconto (-${desco*100}%).</p>`;
+            resul.innerHTML += `<p>No fim, você vai pagar ${reais(tot_pag)} no produto ${prod}.</p>`;
+        }
+
+        // FUNÇÃO P/ TRANSFORMAÇÃO NA NOTAÇÃO DE MOEDA BRASILEIRA ( REAL )
+        function reais(val){
+            return val.toLocaleString('pt-BR' , {style: 'currency' , currency: 'BRL'});
+        }
+    </script>
+</head>
+<body>
+    <div id="interface">
+        <h1>Calcular Desconto</h1>
+        <button onclick="calc_des()">Desconto de 10%</button>
+        <article id="resposta">
+            <p>Clique no botão acima para iniciar</p>
+        </article>
+    </div>
+</body>
+</html>
