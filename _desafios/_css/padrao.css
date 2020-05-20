@@ -59,3 +59,20 @@ span.negrito {
 span {
     font-weight: bold;
 }
+
+span#certo {
+    background-color: rgba(107, 236, 107, 0.986);
+    color: green;
+    text-transform: uppercase;
+}
+
+span#errado {
+    background-color: rgb(233, 63, 63);
+    color: red;
+    text-transform: uppercase;
+}
+
+span#recup {
+    color: #eb9834;
+    text-transform: uppercase;
+}

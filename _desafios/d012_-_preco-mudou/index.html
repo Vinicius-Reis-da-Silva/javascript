@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço mudou</title>
+    <link rel="stylesheet" type="text/css" href="../_css/padrao.css">
+    <script type="text/javascript">
+
+        function mudar(){
+
+            let precoAntes = Number(window.prompt("Qual era o preço anterior do produto?"));
+            let precoDepois = Number(window.prompt("Qual é o preço atual do produto?"));
+            let telaResul = window.document.querySelector('article#resposta');
+
+            telaResul.innerHTML = `<h2>Analisando os valores informados</h2>`;
+            telaResul.innerHTML += `<p>O produto custava ${real(precoAntes)} e agora custa ${real(precoDepois)}.</p>`;
+
+            if (precoDepois > precoAntes) {
+                
+                telaResul.innerHTML += `<p>Hoje o produto está mais caro.</p>`;
+                telaResul.innerHTML += `<p>O preço subiu ${real(precoDepois - precoAntes)} em relação ao preço anterior.</p>`;
+                telaResul.innerHTML += `<p>Uma variação de ${porcDif(precoAntes , precoDepois).toFixed(2)}% pra cima.</p>`;
+
+            } else if (precoDepois < precoAntes) {
+
+                telaResul.innerHTML += `<p>Hoje o produto está mais barato.</p>`;
+                telaResul.innerHTML += `<p>O preço caiu ${real(precoAntes - precoDepois)} em relação ao preço anterior.</p>`;
+                telaResul.innerHTML += `<p>Uma variação de ${porcDif(precoAntes , precoDepois).toFixed(2)}% pra baixo.</p>`;
+
+            } else {
+
+                telaResul.innerHTML += `<p><span>Hoje o produto não mudou o preço</span></p>`;
+
+            }
+        }
+
+        function real(valor){
+            return valor.toLocaleString('pt-BR' , {style: 'currency' , currency: 'BRL'});
+        }
+
+        function porcDif(antes , depois){
+            return (Math.abs(depois - antes)/antes)*100;
+        }
+
+    </script>
+</head>
+<body>
+    <div id="interface">
+        <h1>Preço mudou</h1>
+        <button onclick="mudar()">Verificar</button>
+        <article id="resposta">
+            <p>Clique no botão acima para a mudança de preço</p>
+        </article>
+    </div>
+</body>
+</html>
